@@ -32,7 +32,7 @@ if (-not (Test-Path $OutDir -PathType Container)) {
 $OutDir = (Resolve-Path $OutDir).Path
 
 if (-not (Test-Path $srcDir -PathType Container)) {
-  throw "System/ folder not found at $srcDir — run the main repo's build/assemble step first."
+  throw "System/ folder not found at $srcDir - run the main repo's build/assemble step first."
 }
 
 # Locate makensis: PATH first, then the two common install locations
@@ -43,7 +43,7 @@ $cmd = Get-Command makensis -ErrorAction SilentlyContinue
 if ($cmd) { $makensis = $cmd.Source }
 if (-not $makensis) {
   foreach ($c in @(
-    "$env:ProgramFiles(x86)\NSIS\makensis.exe",
+    "${env:ProgramFiles(x86)}\NSIS\makensis.exe",
     "$env:ProgramFiles\NSIS\makensis.exe",
     "$env:ProgramData\chocolatey\bin\makensis.exe"
   )) {
@@ -51,7 +51,7 @@ if (-not $makensis) {
   }
 }
 if (-not $makensis) {
-  throw "makensis not found. Install NSIS (e.g. `choco install nsis -y`) or put makensis.exe on PATH."
+  throw "makensis not found. Install NSIS (e.g. 'choco install nsis -y') or put makensis.exe on PATH."
 }
 
 Write-Host "==> Building Angels95-Setup-$Version.exe"

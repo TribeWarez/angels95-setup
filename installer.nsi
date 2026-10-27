@@ -8,7 +8,7 @@
 ; gets a playable game instead of a bare client .exe that errors with
 ; "GameData/ dir is missing".
 ;
-; Compile-time inputs (all set by build-installer.ps1, all SPACE-FREE paths —
+; Compile-time inputs (all set by build-installer.ps1, all SPACE-FREE paths -
 ; the Angels95 repo forbids spaces/parentheses in paths):
 ;   VERSION  - release tag / build id, e.g. b117  (default "dev")
 ;   SRC_DIR  - absolute path to the assembled System/ folder (default "System")
@@ -17,7 +17,7 @@
 ; The installer lays files out exactly like a loose `System-<tag>.zip` does:
 ;   <install root>/
 ;     System/            (Angels95.exe, AngelEd.exe, servers, DLLs, Data/*.oz*)
-;     GameData/Saves/    (pre-created and writable — the client writes saves here)
+;     GameData/Saves/    (pre-created and writable - the client writes saves here)
 ;
 ; `$LOCALAPPDATA` is the default root because the client writes its settings
 ; (System/Angels95.ini) and saves into the install tree at runtime; a per-user
